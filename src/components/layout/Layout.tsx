@@ -1,5 +1,7 @@
 import type { PropsWithChildren } from 'react'
 
+import { AudioPlayer } from '../elements/player/AudioPlayer'
+
 import { LeftSidebar } from './left-sidebar/LeftSidebar'
 import { RightSidebar } from './right-sidebar/RightSidebar'
 
@@ -11,7 +13,7 @@ export default function Layout({ children }: PropsWithChildren<unknown>) {
 				<main className='py-layout px-8'>{children}</main>
 				<RightSidebar />
 			</div>
-			{/* <AudioPlayer /> */}
+			<AudioPlayer />
 		</>
 	)
 }

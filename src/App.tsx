@@ -1,22 +1,28 @@
 import { Play } from 'lucide-react'
+import { useQueryState } from 'nuqs'
+import { useMemo } from 'react'
+
+import { SearchField } from './components/elements/search-field/SearchField'
+import { Track } from './components/elements/track-item/Track'
+import { TRACKS } from './data/tracks.data'
 
 function App() {
-	// const [searchTerm, setSearchTerm] = useQueryState('q')
+	const [searchTerm, setSearchTerm] = useQueryState('q')
 
-	// const filteredTracks = useMemo(() => {
-	// 	if (!searchTerm) return TRACKS
+	const filteredTracks = useMemo(() => {
+		if (!searchTerm) return TRACKS
 
-	// 	return TRACKS.filter(track =>
-	// 		track.name.toLowerCase().includes(searchTerm.toLowerCase())
-	// 	)
-	// }, [searchTerm])
+		return TRACKS.filter(track =>
+			track.name.toLowerCase().includes(searchTerm.toLowerCase())
+		)
+	}, [searchTerm])
 
 	return (
 		<div>
-			{/* <SearchField
+			<SearchField
 				value={searchTerm || ''}
 				onChange={e => setSearchTerm(e.target.value)}
-			/> */}
+			/>
 
 			<div className='relative'>
 				<img src='/banner.jpg' alt='' className='rounded-xl' />
@@ -24,7 +30,7 @@ function App() {
 				<div className='bottom-layout px-layout absolute left-0 flex w-full items-center justify-between'>
 					<div>
 						<h1 className='mb-[0.18rem] text-2xl font-semibold text-white'>
-							Daft Punk
+							NH Music
 						</h1>
 						<h2 className='text-primary font-medium'>6.8m listeners</h2>
 					</div>
@@ -35,11 +41,11 @@ function App() {
 				</div>
 			</div>
 
-			{/* <div className='mt-5'>
+			<div className='mt-5'>
 				{filteredTracks.map(track => (
 					<Track key={track.name} track={track} />
 				))}
-			</div> */}
+			</div>
 		</div>
 	)
 }
