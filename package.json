@@ -10,6 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.18",
+    "jsmediatags": "^3.9.7",
+    "lucide-react": "^0.544.0",
+    "mobx": "^6.15.0",
+    "mobx-react-lite": "^4.1.1",
+    "mobx-react-observer": "^1.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

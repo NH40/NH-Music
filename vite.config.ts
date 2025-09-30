@@ -1,7 +1,14 @@
-import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+import observerPlugin from 'mobx-react-observer/swc-plugin'
+import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+	plugins: [
+		react({
+			plugins: [
+				// @ts-expect-error - Type mismatch between @vitejs/plugin-react-swc and mobx-react-observer plugin versions
+				observerPlugin({ exclude: ['src/ui-components/**'] })
+			]
+		})
+	]
 })
