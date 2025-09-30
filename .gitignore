@@ -12,6 +12,7 @@ public/audio
 dist
 dist-ssr
 *.local
+*.mp3
 
 # Editor directories and files
 .vscode/*
