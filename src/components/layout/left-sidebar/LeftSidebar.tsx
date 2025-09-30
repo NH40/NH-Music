@@ -1,6 +1,7 @@
 import { LIBRARY_MENU_ITEMS, MENU_ITEMS } from '@/data/menu.data'
 
 import { Menu } from './Menu'
+import { SidebarPlaylists } from './SidebarPlaylists'
 
 export function LeftSidebar() {
 	return (
@@ -13,7 +14,7 @@ export function LeftSidebar() {
 
 			<hr className='border-player-bg my-8' />
 
-			{/* <SidebarPlaylists /> */}
+			<SidebarPlaylists />
 		</aside>
 	)
 }
